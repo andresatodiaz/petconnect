@@ -79,27 +79,40 @@ fun ProfileProSub(
                 LazyColumn(modifier= Modifier
                     .fillMaxWidth(0.9f)
                     .fillMaxHeight()
-                    .padding(top = 20.dp)) {
+                    .padding(top = 20.dp),
+                    contentPadding = PaddingValues(bottom=120.dp)
+                ) {
                     item{
                         Image(painter = painterResource(id = R.drawable.petify), contentDescription = null,modifier=Modifier.size(40.dp))
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Text(text= buildAnnotatedString {
-                                withStyle(style= SpanStyle(fontWeight = FontWeight.Bold)){
-                                    append("Pet")
+                        Row(
+                            modifier=Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ){
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Text(text= buildAnnotatedString {
+                                    withStyle(style= SpanStyle(fontWeight = FontWeight.Bold)){
+                                        append("Pet")
+                                    }
+                                    withStyle(style = SpanStyle(fontWeight = FontWeight.Normal)){
+                                        append("Connect")
+                                    }
+                                })
+                                Spacer(modifier = Modifier.padding(horizontal = 4.dp))
+                                Row(
+                                    modifier=Modifier.background(mainAmber, CircleShape)
+                                ){
+                                    Text(text = "Pro",modifier=Modifier.padding(horizontal = 10.dp, vertical = 5.dp))
                                 }
-                                withStyle(style = SpanStyle(fontWeight = FontWeight.Normal)){
-                                    append("Connect")
-                                }
-                            })
-                            Spacer(modifier = Modifier.padding(horizontal = 4.dp))
+                            }
                             Row(
-                                modifier=Modifier.background(mainAmber, CircleShape)
+                                modifier=Modifier.background(Color.White, CircleShape)
                             ){
-                                Text(text = "Pro",modifier=Modifier.padding(horizontal = 10.dp, vertical = 5.dp))
+                                Text(text = "S/. 19.99",modifier=Modifier.padding(horizontal = 10.dp, vertical = 5.dp))
                             }
                         }
                         Spacer(modifier = Modifier.padding(10.dp))
-                        Text(text = "¡Descubre PetConnect Pro, la app que revoluciona el cuidado de tus mascotas en Lima! \uD83D\uDC3E\uD83D\uDCF1 Con PetConnect Pro, tendrás acceso a un mundo de servicios y herramientas que te facilitarán la vida como dueño responsable. \uD83D\uDC36\uD83D\uDC31\n" +
+                        Text(text = "¡Descubre PetConnect Pro, la app que revoluciona el cuidado de tus mascotas en Cajamarca! \uD83D\uDC3E\uD83D\uDCF1 Con PetConnect Pro, tendrás acceso a un mundo de servicios y herramientas que te facilitarán la vida como dueño responsable. \uD83D\uDC36\uD83D\uDC31\n" +
                                 "\n" +
                                 "Servicios para tus peludos amigos:\n" +
                                 "\n" +

@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
@@ -47,6 +48,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -111,8 +113,8 @@ fun AlertaHome(
                                 modifier= Modifier
                                     .padding(20.dp)
                             ){
-                                Text("Veterinarias para emergencias", fontWeight = FontWeight.Bold, fontSize = 20.sp,color= Color.White)
-                                Text("Encuentra lugares para atender las emergencias de tus mascotas!", fontSize = 15.sp,color= Color.White)
+                                Text("Alertas de mascotitas", fontWeight = FontWeight.Bold, fontSize = 20.sp,color= Color.White)
+                                Text("Encuentra situaciones que necesiten ser atendidas pronto como pérididas, cirguías, enfermedades y más!", fontSize = 15.sp,color= Color.White)
                             }
                         }
                     }
@@ -192,17 +194,16 @@ fun AlertaHome(
                                     modifier = Modifier.fillMaxWidth()
                                 ){
                                     Row(
-                                        verticalAlignment = Alignment.CenterVertically,
-                                        modifier=Modifier.background(tertiaryPink, CircleShape)
+                                        verticalAlignment = Alignment.CenterVertically
                                     ){
                                         Icon(imageVector = Icons.Filled.Info, contentDescription = null,tint= mainRed,modifier=Modifier.padding(10.dp))
-                                        Text(text=servicio.categoria.toString(),color= mainRed,modifier=Modifier.padding(10.dp))
+                                        Text(text=servicio.categoria.toString(),color= mainRed,modifier=Modifier.padding(10.dp), fontSize = 12.sp, overflow = TextOverflow.Ellipsis, maxLines = 1)
                                     }
                                     Row(modifier= Modifier.background(tertiaryGray, CircleShape)) {
                                         Row(verticalAlignment = Alignment.CenterVertically,modifier= Modifier.padding(5.dp)) {
-                                            Icon(imageVector = Icons.Filled.LocationOn, contentDescription = "location",tint= mainRed)
+                                            Icon(imageVector = Icons.Filled.LocationOn, contentDescription = "location",tint= mainRed,modifier=Modifier.size(15.dp))
                                             Spacer(Modifier.padding(horizontal = 5.dp))
-                                            Text(text=servicio.distance.toString()+" km ")
+                                            Text(text=servicio.distance.toString()+" km ", fontSize = 12.sp, overflow = TextOverflow.Ellipsis, maxLines = 1)
                                         }
                                     }
                                 }

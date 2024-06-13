@@ -14,7 +14,7 @@ class EmergenciaVM @Inject constructor():ViewModel() {
     val emergenciaItems= mutableStateListOf<EmergenciaItem>(
         EmergenciaItem(
             titulo = "Veterinario Manux",
-            descripcion = "Veterinario Manux \uD83D\uDC3E\uD83E\uDE7A: ¡Salud y bienestar para tus peludos amigos en Lima!\n" +
+            descripcion = "Veterinario Manux \uD83D\uDC3E\uD83E\uDE7A: ¡Salud y bienestar para tus peludos amigos en Cajamarca!\n" +
                     "\n" +
                     "¿Buscas atención veterinaria de calidad y confianza para tu mascota? \uD83D\uDC36\uD83D\uDC31\uD83D\uDC30 En Veterinario Manux, nos apasiona cuidar de la salud y el bienestar de tus compañeros peludos. \uD83D\uDC96\n" +
                     "\n" +
@@ -35,7 +35,7 @@ class EmergenciaVM @Inject constructor():ViewModel() {
                     "Precios accesibles: Ofrecemos servicios de calidad a precios justos.\n" +
                     "¡Confía la salud de tu mascota a los expertos! Agenda una cita en Veterinario Manux y dale a tu amigo peludo la atención que se merece. \uD83D\uDC3E\uD83D\uDC96\n" +
                     "\n" +
-                    "Veterinario Manux: ¡Tu veterinario de confianza en Lima! \uD83D\uDCCD",
+                    "Veterinario Manux: ¡Tu veterinario de confianza en Cajamarca! \uD83D\uDCCD",
             autor = "Angelo Baldwin",
             banner= R.drawable.emergencia1,
             distance = 3.1,
@@ -44,7 +44,7 @@ class EmergenciaVM @Inject constructor():ViewModel() {
         ),
         EmergenciaItem(
             titulo = "Veterinario Evanon",
-            descripcion = "Veterinario Evanon \uD83D\uDC36\uD83D\uDC31: ¡Tu oasis de salud y bienestar animal en Lima!\n" +
+            descripcion = "Veterinario Evanon \uD83D\uDC36\uD83D\uDC31: ¡Tu oasis de salud y bienestar animal en Cajamarca!\n" +
                     "\n" +
                     "¿Buscas un lugar donde tu mascota sea tratada como un rey o una reina? \uD83D\uDC51 En Veterinario Evanon, entendemos que tu peludo amigo es parte de tu familia y merece lo mejor. \uD83D\uDC96 ¡Nuestro equipo de expertos veterinarios está aquí para cuidar de su salud y felicidad!\n" +
                     "\n" +

@@ -16,7 +16,7 @@ class AlertaVM @Inject constructor():ViewModel() {
             titulo = "Perritos en necesidad de cirugía",
             descripcion = "Perritos en necesidad de cirugía \uD83D\uDC36\uD83D\uDC94: ¡Ayúdanos a cambiar sus vidas!\n" +
                     "\n" +
-                    "En Lima, muchos perritos sufren de enfermedades o lesiones que requieren cirugías urgentes. \uD83C\uDFE5 Estos pequeños héroes necesitan nuestra ayuda para tener una segunda oportunidad y vivir una vida plena y feliz. \uD83D\uDE4F\n" +
+                    "En Cajamarca, muchos perritos sufren de enfermedades o lesiones que requieren cirugías urgentes. \uD83C\uDFE5 Estos pequeños héroes necesitan nuestra ayuda para tener una segunda oportunidad y vivir una vida plena y feliz. \uD83D\uDE4F\n" +
                     "\n" +
                     "¿Cómo puedes ayudar?\n" +
                     "\n" +
@@ -38,7 +38,7 @@ class AlertaVM @Inject constructor():ViewModel() {
             categoria = "Recaudación"
         ),
         AlertaItem(
-            titulo = "Gato pérdido en Miraflores",
+            titulo = "Gato pérdido en CentroCAX",
             descripcion = "¡Michi perdido en Miraflores! \uD83D\uDE3F ¡Ayúdanos a encontrar a Manny!\n" +
                     "\n" +
                     "Manny, nuestro querido felino de gris y ojos verdes, se ha extraviado en el distrito de Miraflores. \uD83D\uDE3F Es un gato peludo muy cariñoso y juguetón que responde al llamado de \"nene\". \uD83D\uDC3E\n" +

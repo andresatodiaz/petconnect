@@ -1,5 +1,7 @@
 package com.example.petify
 
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -37,6 +39,16 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+    override fun getResources(): Resources {
+        val resources = super.getResources()
+        resources.updateConfiguration(
+            Configuration(resources.configuration).apply {
+                fontScale = 1.0f
+            },
+            resources.displayMetrics
+        )
+        return resources
     }
 }
 

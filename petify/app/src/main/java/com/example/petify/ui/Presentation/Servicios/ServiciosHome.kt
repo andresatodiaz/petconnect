@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
@@ -50,6 +51,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -201,19 +203,19 @@ fun ServiciosHome(
                                     ){
                                         Icon(imageVector = Icons.Filled.AccountCircle, contentDescription = null )
                                         Spacer(modifier = Modifier.padding(horizontal = 5.dp))
-                                        Text(text=servicio.autor!!)
+                                        Text(text=servicio.autor!!, fontSize = 12.sp, overflow =  TextOverflow.Ellipsis,modifier=Modifier.fillMaxWidth(0.3f), maxLines = 1)
                                     }
                                     Row(modifier=Modifier.background(tertiaryGray, CircleShape)) {
                                         Row(verticalAlignment = Alignment.CenterVertically,modifier=Modifier.padding(5.dp)) {
-                                            Icon(imageVector = Icons.Filled.LocationOn, contentDescription = "location",tint= mainRed)
+                                            Icon(imageVector = Icons.Filled.LocationOn, contentDescription = "location",tint= mainRed,modifier=Modifier.size(15.dp))
                                             Spacer(Modifier.padding(horizontal = 5.dp))
-                                            Text(text=servicio.distance.toString()+" km ")
+                                            Text(text=servicio.distance.toString()+" km ", fontSize = 12.sp, overflow = TextOverflow.Ellipsis, maxLines = 1)
                                         }
-                                        Spacer(Modifier.padding(horizontal = 10.dp))
+                                        Spacer(Modifier.padding(horizontal = 2.dp))
                                         Row(verticalAlignment = Alignment.CenterVertically,modifier=Modifier.padding(5.dp)) {
-                                            Icon(imageVector = Icons.Filled.Star, contentDescription = "location",tint= mainBrown)
+                                            Icon(imageVector = Icons.Filled.Star, contentDescription = "location",tint= mainBrown,modifier=Modifier.size(15.dp))
                                             Spacer(Modifier.padding(horizontal = 5.dp))
-                                            Text(text=servicio.stars.toString()+"/5 ")
+                                            Text(text=servicio.stars.toString()+"/5 ", fontSize = 12.sp, overflow = TextOverflow.Ellipsis, maxLines = 1)
                                         }
                                     }
                                 }

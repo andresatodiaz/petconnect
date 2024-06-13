@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -89,8 +90,8 @@ fun LoginHome(
                     .padding(20.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-                Spacer(Modifier.padding(20.dp))
-                Image(painter = painterResource(id = R.drawable.petify), contentDescription =null )
+                Spacer(Modifier.padding(5.dp))
+                Image(painter = painterResource(id = R.drawable.petify), contentDescription =null,modifier=Modifier.size(80.dp))
                 Spacer(Modifier.padding(5.dp))
                 Text(text=buildAnnotatedString {
                     withStyle(style= SpanStyle(fontWeight = FontWeight.Bold)){
@@ -153,7 +154,7 @@ fun LoginHome(
                     Text(text = "Iniciar sesión", fontWeight = FontWeight.Bold)
                     Icon(imageVector = Icons.Filled.KeyboardArrowRight, contentDescription = null)
                 }
-                Spacer(Modifier.padding(10.dp))
+                Spacer(Modifier.padding(5.dp))
                 TextButton(onClick = {
                     navController.navigate("register")
                 }) {

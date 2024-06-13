@@ -66,16 +66,11 @@ fun AdopcionList(
 ){
     val myPets= remember{mutableStateOf(emptyList<AdopcionItem>())}
     val solicitudes=remember{ mutableStateOf(emptyList<AdopcionItem>()) }
-    val toAdopt = remember {
-        mutableStateOf(
-            user.pro.value
-        )
-    }
+    val toAdopt = remember { mutableStateOf(false) }
 
     LaunchedEffect(key1 =true ){
         myPets.value=vm.myPets(user)
         solicitudes.value=vm.showRequest(user)
-        Log.i("intraxx",vm.myPets(user).toString())
     }
     Box {
         LazyColumn(
@@ -83,31 +78,29 @@ fun AdopcionList(
             horizontalAlignment = Alignment.CenterHorizontally,
             contentPadding =  PaddingValues(bottom=100.dp)
         ){
-            if(user.pro.value){
-                item{
-                    Row(
-                        modifier=Modifier.fillMaxWidth(0.9f),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ){
-                        TextButton(
-                            onClick = { toAdopt.value=true }) {
-                            Text(text = "En adopción",color=if(toAdopt.value) mainBrown else secondaryBrown, fontWeight = if(toAdopt.value) FontWeight.Bold else FontWeight.Normal )
-                        }
-                        TextButton(
-                            onClick = { toAdopt.value=false }) {
-                            Text(text = "Adoptar",color=if(!toAdopt.value) mainBrown else secondaryBrown, fontWeight = if(!toAdopt.value) FontWeight.Bold else FontWeight.Normal)
-                        }
+            item{
+                Row(
+                    modifier=Modifier.fillMaxWidth(0.9f),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ){
+                    TextButton(
+                        onClick = { toAdopt.value=false }) {
+                        Text(text = "Adoptar",color=if(!toAdopt.value) mainBrown else secondaryBrown, fontWeight = if(!toAdopt.value) FontWeight.Bold else FontWeight.Normal)
+                    }
+                    TextButton(
+                        onClick = { toAdopt.value=true }) {
+                        Text(text = "En adopción",color=if(toAdopt.value) mainBrown else secondaryBrown, fontWeight = if(toAdopt.value) FontWeight.Bold else FontWeight.Normal )
                     }
                 }
             }
-            if(toAdopt.value && user.pro.value){
+            if(toAdopt.value){
                 item {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.fillMaxWidth(0.9f)
                     ) {
-                        Icon(painter = painterResource(id = R.drawable.petlist), contentDescription = null)
+                        Icon(painter = painterResource(id = R.drawable.petlist), contentDescription = null,modifier=Modifier.size(20.dp))
                         Spacer(modifier = Modifier.padding(horizontal = 5.dp))
                         Text("Mis mascotas en adopción")
                     }
@@ -253,14 +246,13 @@ fun AdopcionList(
                         }
                     }
                 }
-            }
-            if(!user.pro.value || !toAdopt.value){
+            }else{
                 item {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.fillMaxWidth(0.9f)
                     ) {
-                        Icon(painter = painterResource(id = R.drawable.petlist), contentDescription = null)
+                        Icon(painter = painterResource(id = R.drawable.petlist), contentDescription = null,modifier=Modifier.size(20.dp))
                         Spacer(modifier = Modifier.padding(horizontal = 5.dp))
                         Text("Lista de mascotas de interés")
                     }
@@ -340,30 +332,28 @@ fun AdopcionList(
                 }
             }
             }
-        if(user.pro?.value==true){
-            Button(
-                colors= ButtonDefaults.buttonColors(
-                    containerColor = mainAmber,
-                    contentColor = mainBrown
-                ),
-                modifier= Modifier
-                    .align(Alignment.BottomEnd)
-                    .padding(end = 20.dp, bottom = 10.dp),
-                onClick = { navController.navigate("add") },
-                elevation = ButtonDefaults.elevatedButtonElevation(
-                    defaultElevation = 3.dp
-                )
+        Button(
+            colors= ButtonDefaults.buttonColors(
+                containerColor = mainAmber,
+                contentColor = mainBrown
+            ),
+            modifier= Modifier
+                .align(Alignment.BottomEnd)
+                .padding(end = 20.dp, bottom = 10.dp),
+            onClick = { navController.navigate("add") },
+            elevation = ButtonDefaults.elevatedButtonElevation(
+                defaultElevation = 3.dp
+            )
+        ) {
+            Row(
+                modifier=Modifier.padding(5.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Row(
-                    modifier=Modifier.padding(5.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text("Agregar", fontWeight = FontWeight.Bold)
-                    Spacer(Modifier.padding(horizontal = 4.dp))
-                    Icon(imageVector = Icons.Filled.Add, contentDescription = null )
-                }
-
+                Text("Agregar", fontWeight = FontWeight.Bold)
+                Spacer(Modifier.padding(horizontal = 4.dp))
+                Icon(imageVector = Icons.Filled.Add, contentDescription = null )
             }
+
         }
     }
 

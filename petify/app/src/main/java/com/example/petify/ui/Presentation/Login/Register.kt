@@ -44,6 +44,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.petify.R
 import com.example.petify.ui.theme.mainAmber
@@ -82,18 +83,17 @@ fun Register(
             ),
             modifier= Modifier
                 .fillMaxWidth(0.8f)
-                .padding(top=100.dp)
-                .align(Alignment.TopCenter)
+                .padding(top=60.dp, bottom = 10.dp)
+                .align(Alignment.Center)
         ) {
             LazyColumn(
-                modifier= Modifier
-                    .fillMaxWidth()
-                    .padding(20.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
+                modifier=Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                contentPadding = PaddingValues(bottom=20.dp)
             ){
                 item{
-                    Spacer(Modifier.padding(20.dp))
-                    Image(painter = painterResource(id = R.drawable.petify), contentDescription =null,modifier=Modifier.size(100.dp) )
+                    Spacer(Modifier.padding(5.dp))
+                    Image(painter = painterResource(id = R.drawable.petify), contentDescription =null,modifier=Modifier.size(80.dp) )
                     Spacer(Modifier.padding(5.dp))
                     Text(text= buildAnnotatedString {
                         withStyle(style= SpanStyle(fontWeight = FontWeight.Bold)){
@@ -115,7 +115,9 @@ fun Register(
                         },
                         value = nombre.value, onValueChange = {
                             nombre.value=it
-                        } )
+                        },
+                        modifier=Modifier.fillMaxWidth(0.9f)
+                        )
                     Spacer(Modifier.padding(10.dp))
                     OutlinedTextField(
                         colors= TextFieldDefaults.outlinedTextFieldColors(
@@ -128,7 +130,8 @@ fun Register(
                         },
                         value = correo.value, onValueChange = {
                             correo.value=it
-                        } )
+                        },
+                        modifier=Modifier.fillMaxWidth(0.9f) )
                     Spacer(Modifier.padding(10.dp))
                     OutlinedTextField(
                         colors= TextFieldDefaults.outlinedTextFieldColors(
@@ -139,9 +142,11 @@ fun Register(
                         label={
                             Text("Contraseña",color= mainBrown)
                         },
-                        value = contrasena.value, onValueChange = {
+                        value = contrasena.value,
+                        modifier=Modifier.fillMaxWidth(0.9f),
+                        onValueChange = {
                             contrasena.value=it
-                        }
+                        },
                     )
                     Spacer(Modifier.padding(10.dp))
                     OutlinedTextField(
@@ -156,11 +161,11 @@ fun Register(
                         value = numero.value.toString(), onValueChange = {
                             numero.value=it
                         },
-                        keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done, keyboardType = KeyboardType.Number)
+                        keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done, keyboardType = KeyboardType.Number),
+                        modifier=Modifier.fillMaxWidth(0.9f)
                     )
                     Spacer(Modifier.padding(10.dp))
                     Button(
-                        modifier= Modifier.padding(10.dp),
                         colors= ButtonDefaults.buttonColors(
                             contentColor = mainBrown,
                             containerColor = mainAmber
@@ -186,7 +191,7 @@ fun Register(
                         Text(text = "Registrar", fontWeight = FontWeight.Bold)
                         Icon(imageVector = Icons.Filled.KeyboardArrowRight, contentDescription = null)
                     }
-                    Spacer(Modifier.padding(10.dp))
+                    Spacer(Modifier.padding(4.dp))
                     TextButton(onClick = {
                         navController.navigate("login")
                     }) {
@@ -199,6 +204,7 @@ fun Register(
                             }
                         },color= mainBrown)
                     }
+                    Spacer(Modifier.padding(10.dp))
                 }
             }
         }

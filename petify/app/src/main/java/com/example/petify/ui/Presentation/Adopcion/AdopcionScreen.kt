@@ -124,7 +124,8 @@ fun AdopcionScreen(
             Row(modifier= Modifier
                 .fillMaxHeight(0.1f)
                 .fillMaxWidth(0.9f)
-                .align(Alignment.BottomCenter),
+                .align(Alignment.BottomCenter)
+                .padding(bottom=15.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center
                 ){
@@ -176,7 +177,8 @@ fun AdopcionScreen(
                 modifier= Modifier
                     .fillMaxWidth(0.9f)
                     .fillMaxHeight(0.1f)
-                    .align(Alignment.BottomCenter),
+                    .align(Alignment.BottomCenter)
+                    .padding(bottom=15.dp),
                 horizontalArrangement = Arrangement.End,
                 verticalAlignment = Alignment.CenterVertically,
             ) {

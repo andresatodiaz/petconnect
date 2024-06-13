@@ -40,7 +40,7 @@ class ServiciosVM @Inject constructor(
         ServicioItem(
             titulo = "Paseo de perritos",
             autor="Sebas Manin",
-            descripcion="¿El trabajo, los estudios o la vida diaria te impiden darle a tu perro el ejercicio que necesita? \uD83D\uDE2B ¡No te preocupes más! En PetConnect, conectamos a dueños ocupados \uD83D\uDCBC con amantes de los animales \uD83D\uDC3E que están listos para llevar a tu perro a explorar los hermosos parques y calles de Lima. \uD83C\uDF33\uD83C\uDFD9️\n" +
+            descripcion="¿El trabajo, los estudios o la vida diaria te impiden darle a tu perro el ejercicio que necesita? \uD83D\uDE2B ¡No te preocupes más! En PetConnect, conectamos a dueños ocupados \uD83D\uDCBC con amantes de los animales \uD83D\uDC3E que están listos para llevar a tu perro a explorar los hermosos parques y calles de Cajamarca. \uD83C\uDF33\uD83C\uDFD9️\n" +
                     "\n" +
                     "¿Por qué somos tu mejor opción?\n" +
                     "\n" +
@@ -51,7 +51,7 @@ class ServiciosVM @Inject constructor(
                     "Flexibilidad y comodidad: Reserva y programa paseos con facilidad a través de nuestra app. \uD83D\uDCF1 Tú eliges el día, la hora y la duración del paseo. \uD83D\uDCC5\n" +
                     "¡Dale a tu perro la felicidad que se merece! Permítenos ser tus aliados en el cuidado de tu mascota. Descarga nuestra app y regálale a tu perro la oportunidad de explorar, jugar y socializar mientras tú te ocupas de tus tareas diarias.\n" +
                     "\n" +
-                    "PetConnect: ¡Porque tu perro también merece disfrutar de Lima! \uD83D\uDC3E❤️",
+                    "PetConnect: ¡Porque tu perro también merece disfrutar de Cajamarca! \uD83D\uDC3E❤️",
             banner = R.drawable.servicio1,
             distance = 2.2,
             stars = 4.5
@@ -59,7 +59,7 @@ class ServiciosVM @Inject constructor(
         ServicioItem(
             titulo = "Spa de mascotitas",
             autor="Lenin Panin",
-            descripcion="¿Tu mascota merece un día de mimos y cuidados especiales? \uD83D\uDC3E\uD83D\uDC96 En PetConnect, ofrecemos un oasis de bienestar para perros y gatos en Lima. \uD83D\uDC36\uD83D\uDC31 Nuestros servicios de spa profesionales están diseñados para consentir a tu compañero peludo y mejorar su calidad de vida. ✨\n" +
+            descripcion="¿Tu mascota merece un día de mimos y cuidados especiales? \uD83D\uDC3E\uD83D\uDC96 En PetConnect, ofrecemos un oasis de bienestar para perros y gatos en Cajamarca. \uD83D\uDC36\uD83D\uDC31 Nuestros servicios de spa profesionales están diseñados para consentir a tu compañero peludo y mejorar su calidad de vida. ✨\n" +
                     "\n" +
                     "Nuestros servicios incluyen:\n" +
                     "\n" +
